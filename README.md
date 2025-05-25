@@ -5,12 +5,25 @@ This repository provides a minimal project structure for quickly starting backen
 
 ## 📦 Tech Stack
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Nodemon](https://nodemon.io/)
-- `.editorconfig` for consistent code formatting across editors
+**Runtime & Framework**
+
+- [Node.js](https://nodejs.org/) – JavaScript runtime
+- [Express 5](https://expressjs.com/) – Web framework for building APIs
+
+**Middleware & Logging**
+
+- [cors](https://www.npmjs.com/package/cors) – Enable Cross-Origin Resource Sharing
+- [dotenv](https://www.npmjs.com/package/dotenv) – Load environment variables from `.env`
+- [pino-http](https://github.com/pinojs/pino-http) – High-performance HTTP request logger
+- [pino-pretty](https://github.com/pinojs/pino-pretty) – Prettifier for Pino logs (dev only)
+
+**Development Tools**
+
+- [ESLint](https://eslint.org/) – JavaScript linter (`@eslint/js` with custom config)
+- [globals](https://www.npmjs.com/package/globals) – Shared global variable definitions for ESLint
+- [Prettier](https://prettier.io/) – Code formatter (via `.prettierrc`)
+- [Nodemon](https://nodemon.io/) – Auto-restarts server on file changes
+- `.editorconfig` – Consistent editor formatting across IDEs
 
 ## 🏗️ Project Structure
 
