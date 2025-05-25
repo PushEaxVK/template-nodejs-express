@@ -17,12 +17,27 @@ This repository provides a minimal project structure for quickly starting backen
 ```
 template-nodejs-express/
 ├── src/
-│ └── index.js    # Entry point of the app
-├── .editorconfig # Editor configuration
-├── .eslintrc     # ESLint configuration
-├── .prettierrc   # Prettier configuration
-├── package.json  # Scripts and dependencies
-└── README.md     # Project description
+│   ├── constants/        # App constants and settings
+│   ├── controllers/      # Request handlers (controllers)
+│   ├── db/               # Database config and models
+│   ├── middlewares/      # Custom middleware functions
+│   ├── routers/          # API routes and endpoints
+│   ├── services/         # Business logic functions
+│   ├── templates/        # Email or view templates
+│   ├── utils/            # Helper and utility functions
+│   │   └── getEnvVar.js  # Load and check env variables
+│   ├── validation/       # Input validation logic
+│   ├── server.js         # Server setup and config
+│   └── index.js          # App entry point
+├── .editorconfig         # Editor formatting rules
+├── .env                  # Local environment variables
+├── .env.example          # Example env variables
+├── .gitignore            # Ignored files and folders
+├── .prettierrc           # Prettier formatting config
+├── eslint.config.mjs     # ESLint rules and setup
+├── package-lock.json     # Auto-generated lockfile
+├── package.json          # Project metadata and scripts
+└── README.md             # Project documentation
 ```
 
 ## 🚀 Getting Started
