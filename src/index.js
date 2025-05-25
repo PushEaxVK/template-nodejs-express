@@ -1,9 +1,12 @@
 import express from 'express';
 import pino from 'pino-http';
+import cors from 'cors';
 
 const PORT = 3000;
 
 const app = express();
+
+app.use(cors());
 
 app.use(pino({ transport: { target: 'pino-pretty' } }));
 
