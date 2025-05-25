@@ -1,8 +1,8 @@
 import express from 'express';
 
-const app = express();
-
 const PORT = 3000;
+
+const app = express();
 
 app.use((req, res, next) => {
   console.log('Time:', new Date().toLocaleString(), 'Request URL:', req.url);
@@ -15,6 +15,12 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World!' });
+});
+
+app.use((req, res, next) => {
+  res.status(404).json({
+    message: 'Not found',
+  });
 });
 
 // Middleware для обробких помилок (приймає 4 аргументи)
