@@ -9,6 +9,10 @@ app.use((req, res, next) => {
   next();
 });
 
+// Вбудований у express middleware для обробки (парсингу) JSON-даних у запитах
+// наприклад, у запитах POST або PATCH
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World!' });
 });
