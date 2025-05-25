@@ -1,13 +1,11 @@
 import express from 'express';
+import pino from 'pino-http';
 
 const PORT = 3000;
 
 const app = express();
 
-app.use((req, res, next) => {
-  console.log('Time:', new Date().toLocaleString(), 'Request URL:', req.url);
-  next();
-});
+app.use(pino({ transport: { target: 'pino-pretty' } }));
 
 // Вбудований у express middleware для обробки (парсингу) JSON-даних у запитах
 // наприклад, у запитах POST або PATCH
