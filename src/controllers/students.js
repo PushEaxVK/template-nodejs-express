@@ -10,14 +10,15 @@ export const getStudentsController = async (req, res) => {
   });
 };
 
-export const getStudentByIdController = async (req, res) => {
+export const getStudentByIdController = async (req, res, next) => {
   const { studentId } = req.params;
-  const student = await getStudentById(studentId);
+  let student;
+  student = await getStudentById(studentId);
 
-  if (!studentId) {
-    res.status(404).json({
-      message: 'Student not found',
-    });
+  console.log('Student: ', student);
+
+  if (!student) {
+    next(new Error('Student not found'));
     return;
   }
 
