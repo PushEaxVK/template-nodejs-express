@@ -13,14 +13,9 @@ export const getStudentsController = async (req, res) => {
 
 export const getStudentByIdController = async (req, res, next) => {
   const { studentId } = req.params;
-  // let student;
   const student = await getStudentById(studentId);
 
-  // console.log('Student: ', student);
-
   if (!student) {
-    // next(new Error('Student not found'));
-    // return;
     throw createHttpError(404, 'Student not found');
   }
 
@@ -29,4 +24,8 @@ export const getStudentByIdController = async (req, res, next) => {
     message: `Successfully found student with id ${studentId}!`,
     data: student,
   });
+};
+
+export const createStudentController = async (req, res) => {
+  // a
 };
