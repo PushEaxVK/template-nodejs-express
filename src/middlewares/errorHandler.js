@@ -11,8 +11,8 @@ export const errorHandler = (err, req, res, next) => {
   }
 
   if (err instanceof MongooseError) {
-    return res.status(500).json({
-      status: 500,
+    return res.status(err.status).json({
+      status: err.status,
       message: 'MongoDB error',
       details: err.message,
       data: err,
